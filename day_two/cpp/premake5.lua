@@ -1,4 +1,4 @@
-workspace "day_one"
+workspace "day_two"
     architecture "x64"
     configurations { "Debug", "Release" }
 
