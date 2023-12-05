@@ -2,5 +2,6 @@
 
 members = [
     "day_one/rust",
-    "day_two/rust"
+    "day_two/rust",
+    "day_four/rust",
 ]
