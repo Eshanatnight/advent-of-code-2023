@@ -11,11 +11,6 @@
 #include <vector>
 #include <limits.h>
 
-#if 0
-    #define FILE_PATH "example.txt"
-#else
-    #define FILE_PATH "input.txt"
-#endif
 struct RangeMap {
     long long source_start;
     long long dest_start;
