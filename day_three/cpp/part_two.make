@@ -38,14 +38,14 @@ define POSTBUILDCMDS
 endef
 
 ifeq ($(config),debug)
-TARGETDIR = bin/Debug-windows-x86_64/part_two
-TARGET = $(TARGETDIR)/part_two.exe
-OBJDIR = bin-int/Debug-windows-x86_64/part_two
+TARGETDIR = build/bin/Debug-linux-x86_64/part_two
+TARGET = $(TARGETDIR)/part_two
+OBJDIR = build/bin-int/Debug-linux-x86_64/part_two
 
 else ifeq ($(config),release)
-TARGETDIR = bin/Release-windows-x86_64/part_two
-TARGET = $(TARGETDIR)/part_two.exe
-OBJDIR = bin-int/Release-windows-x86_64/part_two
+TARGETDIR = build/bin/Release-linux-x86_64/part_two
+TARGET = $(TARGETDIR)/part_two
+OBJDIR = build/bin-int/Release-linux-x86_64/part_two
 
 endif
 

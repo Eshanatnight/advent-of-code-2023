@@ -8,8 +8,8 @@ project "part_one"
     kind "ConsoleApp"
     language "C++"
     cppdialect "C++17"
-    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+    targetdir ("build/bin/" .. outputdir .. "/%{prj.name}")
+    objdir ("build/bin-int/" .. outputdir .. "/%{prj.name}")
     files { "src/part_one.cpp"}
 
 
@@ -17,6 +17,6 @@ project "part_two"
     kind "ConsoleApp"
     language "C++"
     cppdialect "C++17"
-    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+    targetdir ("build/bin/" .. outputdir .. "/%{prj.name}")
+    objdir ("build/bin-int/" .. outputdir .. "/%{prj.name}")
     files { "src/part_two.cpp"}
