@@ -1,4 +1,4 @@
-workspace "day_one"
+workspace "Trebuchet"
     architecture "x64"
     configurations { "Debug", "Release" }
 
@@ -10,7 +10,7 @@ project "part_one"
     cppdialect "C++17"
     targetdir ("build/bin/" .. outputdir .. "/%{prj.name}")
     objdir ("build/bin-int/" .. outputdir .. "/%{prj.name}")
-    files { "src/part_one.cpp"}
+    files { "src/trebuchet_part_one.cpp", "one.input.txt", "one.sample.txt"}
 
 
 project "part_two"
@@ -19,4 +19,4 @@ project "part_two"
     cppdialect "C++17"
     targetdir ("build/bin/" .. outputdir .. "/%{prj.name}")
     objdir ("build/bin-int/" .. outputdir .. "/%{prj.name}")
-    files { "src/part_two.cpp"}
+    files { "src/trebuchet_part_two.cpp", "two.input.txt", "two.sample.txt" }

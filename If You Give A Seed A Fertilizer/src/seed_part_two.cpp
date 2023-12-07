@@ -35,7 +35,7 @@ bool isInRange(long long source, RangeMap range) {
 long long findDestInRange(long long source, int range) {
     for (int i = 0; i < ranges[range].size(); ++i) {
         if (isInRange(source, ranges[range][i])) {
-            return ranges[range][i].dest_start + (source - ranges[range][i].source_start); 
+            return ranges[range][i].dest_start + (source - ranges[range][i].source_start);
         }
     }
     return source;
@@ -50,8 +50,8 @@ long long convertSeedToLocation(long long seed) {
 
 
 bool canGenerateRange(Range range, RangeMap map) {
-    return isInRange(range.start, map) || 
-        isInRange(range.start + range.range, map) || 
+    return isInRange(range.start, map) ||
+        isInRange(range.start + range.range, map) ||
         (range.start < map.source_start && range.start + range.range >= map.source_start + map.range);
 }
 
@@ -87,7 +87,7 @@ std::vector<Range> getPossibleRanges(Range range, int rangeMap) {
                     rangeIn1.start = range.start;
                     rangeIn1.range = map.source_start - range.start;
                     rangeIn2.start = map.source_start + map.range;
-                    rangeIn2.range = (range.start + range.range) - (map.source_start + map.range); 
+                    rangeIn2.range = (range.start + range.range) - (map.source_start + map.range);
                     if (rangeIn1.range != 0) {
                         temp.push_back(rangeIn1);
                     }
@@ -121,7 +121,7 @@ int solution2() {
         Range range;
         range.start = seeds[i];
         range.range = seeds[i + 1];
-        ranges.push_back(range); 
+        ranges.push_back(range);
     }
     for (int i = 0; i < 7; i++) {
         swap.clear();
@@ -131,7 +131,7 @@ int solution2() {
         }
         ranges = swap;
     }
-    
+
     for (int i = 0; i < ranges.size(); ++i) {
         if (ranges[i].start  < lowest) {
             lowest = ranges[i].start;
@@ -142,7 +142,7 @@ int solution2() {
 }
 
 int main(int argc, char* argv[]) {
-    
+
     if(argc != 2) {
         std::cout << "Invalid Useage" << std::endl;
         return 1;
@@ -169,7 +169,7 @@ int main(int argc, char* argv[]) {
     }
     getline(file, line);
     getline(file, line);
-    int i = 0; 
+    int i = 0;
     while (getline(file, line)) {
         if (line == "") {
             getline(file, line);
@@ -177,7 +177,7 @@ int main(int argc, char* argv[]) {
             continue;
         }
         RangeMap range;
-        
+
         range.dest_start = strtoll(line.c_str(), &number_size, 10);
         line = line.substr(number_size - line.c_str());
         range.source_start = strtoll(line.c_str(), &number_size, 10);

@@ -1,5 +1,5 @@
 [package]
-name = "day_six"
+name = "Scratchcards"
 version = "0.1.0"
 edition = "2021"
 
@@ -8,7 +8,7 @@ edition = "2021"
 [dependencies]
 
 [[bin]]
-name = "part_one"
+name = "scratchcards_part_one"
 
 [[bin]]
-name = "part_two"
+name = "scratchcards_part_two"

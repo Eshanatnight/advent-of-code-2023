@@ -1,5 +1,5 @@
 [package]
-name = "day_one"
+name = "Trebuchet"
 version = "0.1.0"
 edition = "2021"
 
@@ -9,7 +9,7 @@ edition = "2021"
 regex = "1.10.2"
 
 [[bin]]
-name = "part_one"
+name = "trebuchet_part_one"
 
 [[bin]]
-name = "part_two"
+name = "trebuchet_part_two"
