@@ -4,5 +4,6 @@ members = [
     "Day-1 Trebuchet/rust",
     "Day-4 Scratchcards",
     "Day-6 Wait For It",
-    "Day-8 Haunted Wasteland"
+    "Day-8 Haunted Wasteland",
+    "Day-10 Pipe Maze"
 ]
