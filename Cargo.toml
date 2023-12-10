@@ -1,8 +1,8 @@
 [workspace]
 
 members = [
-    "Trebuchet/rust",
-    "Scratchcards",
-    "Wait For It",
-    "Haunted Wasteland"
+    "Day-1 Trebuchet/rust",
+    "Day-4 Scratchcards",
+    "Day-6 Wait For It",
+    "Day-8 Haunted Wasteland"
 ]
