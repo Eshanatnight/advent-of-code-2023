@@ -10,6 +10,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "Hot_Springs"
+version = "0.1.0"
+
+[[package]]
 name = "PipeMaze"
 version = "0.1.0"
 dependencies = [
