@@ -1,124 +1,123 @@
-#include <iostream>
-#include <string>
-#include <fstream>
-#include <vector>
-#include <cstdint>
-#include <sstream>
 #include <algorithm>
+#include <cstdint>
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
 
 using namespace std;
 
 auto process_input(const string& file_name) -> vector<string> {
-    ifstream file(file_name);
-    string line;
+	ifstream file(file_name);
+	string line;
 
-    vector<string> input;
-    while(getline(file, line)) {
-        input.push_back(line);
-    }
+	vector<string> input;
+	while (getline(file, line)) {
+		input.push_back(line);
+	}
 
-    return input;
+	return input;
 }
 
 auto is_num(const string& str) -> bool {
-    for(const auto& c : str) {
-        if(c == '-') {
-            continue;
-        }
+	for (const auto& c : str) {
+		if (c == '-') {
+			continue;
+		}
 
-        if( c < '0' || c > '9') {
-            return false;
-        }
-    }
+		if (c < '0' || c > '9') {
+			return false;
+		}
+	}
 
-    return true;
+	return true;
 }
 
 auto get_ints(const string& line) -> vector<int64_t> {
-    vector<int64_t> list;
+	vector<int64_t> list;
 
-    stringstream ss(line);
-    string token;
+	stringstream ss(line);
+	string token;
 
-    while(ss >> token) {
-        if(!token.empty() && is_num(token)) {
-            list.push_back(stoll(token));
-        }
-    }
+	while (ss >> token) {
+		if (!token.empty() && is_num(token)) {
+			list.push_back(stoll(token));
+		}
+	}
 
-    return list;
+	return list;
 }
-
 
 auto solve(const vector<string>& input) -> int64_t {
-    int64_t next_val{0};
+	int64_t next_val {0};
 
-    for(const auto& line : input) {
-        int64_t extrapolated_value{0};
+	for (const auto& line : input) {
+		int64_t extrapolated_value {0};
 
-        if(line.empty()) {
-            continue;
-        }
+		if (line.empty()) {
+			continue;
+		}
 
-        vector<vector<int64_t>> extrapolate;
-        vector<int64_t> history = get_ints(line);
-        
-        extrapolate.push_back(history);
+		vector<vector<int64_t>> extrapolate;
+		vector<int64_t> history = get_ints(line);
 
-        uint64_t extrapolate_idx{0};
+		extrapolate.push_back(history);
 
-        while(true) {
-            bool is_only_zero{true};
-            vector<int64_t> sequence;
+		uint64_t extrapolate_idx {0};
 
-            int extrapolate_size = extrapolate[extrapolate_idx].size();
-            for(int i = 1; i < extrapolate_size; ++i) {
-                int64_t new_number_in_sequence = extrapolate[extrapolate_idx][i] - extrapolate[extrapolate_idx][i - 1];
-                sequence.push_back(new_number_in_sequence);
-                if(new_number_in_sequence != 0) {
-                    is_only_zero = false; 
-                } 
-            }
+		while (true) {
+			bool is_only_zero {true};
+			vector<int64_t> sequence;
 
-            extrapolate.push_back(sequence);
+			int extrapolate_size = extrapolate[extrapolate_idx].size();
+			for (int i = 1; i < extrapolate_size; ++i) {
+				int64_t new_number_in_sequence =
+					extrapolate[extrapolate_idx][i] - extrapolate[extrapolate_idx][i - 1];
+				sequence.push_back(new_number_in_sequence);
+				if (new_number_in_sequence != 0) {
+					is_only_zero = false;
+				}
+			}
 
-            if(is_only_zero) {
-                break;
-            }
+			extrapolate.push_back(sequence);
 
-            ++extrapolate_idx;
-        }
+			if (is_only_zero) {
+				break;
+			}
 
-        reverse(extrapolate.begin(), extrapolate.end());
-        for(const auto& history : extrapolate) {
-            extrapolated_value = history[0] - extrapolated_value;
-        }
+			++extrapolate_idx;
+		}
 
-        next_val += extrapolated_value;
-    }
+		reverse(extrapolate.begin(), extrapolate.end());
+		for (const auto& history : extrapolate) {
+			extrapolated_value = history[0] - extrapolated_value;
+		}
 
-    return next_val;
+		next_val += extrapolated_value;
+	}
+
+	return next_val;
 }
 
-
 auto main(int argc, char* argv[]) -> int {
-    if(argc != 2) {
-        cerr << "Invalid Useage" << endl;   
-        return 1;
-    } 
+	if (argc != 2) {
+		cerr << "Invalid Useage" << endl;
+		return 1;
+	}
 
-    string file_name;
-    if(*argv[1] == '1') {
-        file_name = "two.sample.txt";
-    } else {
-        file_name = "two.input.txt";
-    }
+	string file_name;
+	if (*argv[1] == '1') {
+		file_name = "two.sample.txt";
+	} else {
+		file_name = "two.input.txt";
+	}
 
-    auto input = process_input(file_name); 
+	auto input = process_input(file_name);
 
-    auto result = solve(input);
+	auto result = solve(input);
 
-    cout << "Result: " << result << endl;
+	cout << "Result: " << result << endl;
 
-    return 0;
+	return 0;
 }
