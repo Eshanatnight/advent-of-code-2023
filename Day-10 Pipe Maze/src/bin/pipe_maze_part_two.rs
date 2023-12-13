@@ -32,51 +32,51 @@ fn main() -> std::io::Result<()> {
             (Direction::NORTH, '|') => {
                 left.push((uppsize.0, uppsize.1 + 1));
                 right.push((uppsize.0, uppsize.1 - 1));
-            }
+            },
             (Direction::SOUTH, '|') => {
                 right.push((uppsize.0, uppsize.1 + 1));
                 left.push((uppsize.0, uppsize.1 - 1));
-            }
+            },
             (Direction::EAST, '-') => {
                 right.push((uppsize.0 - 1, uppsize.1));
                 left.push((uppsize.0 + 1, uppsize.1));
-            }
+            },
             (Direction::WEST, '-') => {
                 left.push((uppsize.0 - 1, uppsize.1));
                 right.push((uppsize.0 + 1, uppsize.1));
-            }
+            },
             (Direction::NORTH, 'L') => {
                 right.push((uppsize.0, uppsize.1 - 1));
                 right.push((uppsize.0 + 1, uppsize.1));
-            }
+            },
             (Direction::EAST, 'L') => {
                 left.push((uppsize.0, uppsize.1 - 1));
                 left.push((uppsize.0 + 1, uppsize.1));
-            }
+            },
             (Direction::NORTH, 'J') => {
                 left.push((uppsize.0, uppsize.1 + 1));
                 left.push((uppsize.0 + 1, uppsize.1));
-            }
+            },
             (Direction::WEST, 'J') => {
                 right.push((uppsize.0, uppsize.1 + 1));
                 right.push((uppsize.0 + 1, uppsize.1));
-            }
+            },
             (Direction::SOUTH, '7') => {
                 right.push((uppsize.0, uppsize.1 + 1));
                 right.push((uppsize.0 - 1, uppsize.1));
-            }
+            },
             (Direction::WEST, '7') => {
                 left.push((uppsize.0, uppsize.1 + 1));
                 left.push((uppsize.0 - 1, uppsize.1));
-            }
+            },
             (Direction::SOUTH, 'F') => {
                 left.push((uppsize.0, uppsize.1 - 1));
                 left.push((uppsize.0 - 1, uppsize.1));
-            }
+            },
             (Direction::EAST, 'F') => {
                 right.push((uppsize.0, uppsize.1 - 1));
                 right.push((uppsize.0 - 1, uppsize.1));
-            }
+            },
             _ => panic!("{:?}, {:?}, {:?}", curr, matrix[curr.0][curr.1], dir),
         };
 

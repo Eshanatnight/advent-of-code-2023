@@ -2,13 +2,13 @@ use std::collections::HashMap;
 
 #[derive(Debug)]
 struct Game {
-    races: HashMap<usize, HashMap<usize, usize>>
+    races: HashMap<usize, HashMap<usize, usize>>,
 }
 
 impl Game {
     fn parse(input: &str) -> Self {
         let mut game = Game {
-            races: HashMap::new()
+            races: HashMap::new(),
         };
 
         let game_split = input.split("\n").collect::<Vec<_>>();
@@ -20,21 +20,18 @@ impl Game {
             let mut times: HashMap<usize, usize> = HashMap::new();
             let distance_record = distances[index];
 
-
             for hold_length in 1..race_length - 1 {
                 let distance = (race_length - hold_length) * hold_length;
 
                 if distance > distance_record {
                     times.insert(hold_length, distance);
+                }
             }
+
+            game.races.insert(*race_length, times);
         }
-
-        game.races.insert(*race_length, times);
-    }
         game
-    
-}
-
+    }
 }
 
 fn parse_numbers(input: &str) -> Vec<usize> {
@@ -48,7 +45,7 @@ fn parse_numbers(input: &str) -> Vec<usize> {
             in_number = true;
             number.push(c);
         } else if in_number {
-            numbers.push(number.parse::<usize>().unwrap());         // directly unwrap here, because we know it's a number
+            numbers.push(number.parse::<usize>().unwrap()); // directly unwrap here, because we know it's a number
             number = String::new();
             in_number = false;
         }
@@ -67,11 +64,7 @@ fn main() {
 
     let game = Game::parse(input);
 
-    let res: usize = game.races
-        .values()
-        .map(|v| v.len())
-        .product();
-
+    let res: usize = game.races.values().map(|v| v.len()).product();
 
     println!("Result: {}", res)
 }

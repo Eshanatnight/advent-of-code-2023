@@ -42,7 +42,7 @@ fn process(input: &str) -> i32 {
 fn main() {
     let input = include_str!("../../part_one.sample.txt");
     println!("Sample: {}", process(input));
-    
+
     let input = include_str!("../../part_one.input.txt");
     println!("Input: {}", process(input));
 }

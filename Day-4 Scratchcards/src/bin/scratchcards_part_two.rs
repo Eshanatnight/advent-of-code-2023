@@ -4,7 +4,6 @@ fn process(input: &str) -> i32 {
     let mut card_count: Vec<i32> = vec![1; lines.len()];
 
     for (num, line) in lines.into_iter().enumerate() {
-
         let mut str_itr = line.split(":").last().unwrap().split("|").into_iter();
         let key_str = str_itr.next().unwrap();
         let val_str = str_itr.next().unwrap();
@@ -23,7 +22,7 @@ fn process(input: &str) -> i32 {
         let count = vals.into_iter().filter(|x| keys.contains(x)).count();
 
         if count != 0 {
-            for i in num + 1.. num + count + 1 {
+            for i in num + 1..num + count + 1 {
                 card_count[i] += card_count[num];
             }
         }

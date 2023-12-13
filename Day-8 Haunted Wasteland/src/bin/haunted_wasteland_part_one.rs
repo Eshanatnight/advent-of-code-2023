@@ -1,6 +1,6 @@
 use std::{collections::HashMap, str::Lines};
 
-fn solve(input:  &mut Lines<'_>) -> usize {
+fn solve(input: &mut Lines<'_>) -> usize {
     // instructions cyclic iterator
     let mut instructions = input
         .next()

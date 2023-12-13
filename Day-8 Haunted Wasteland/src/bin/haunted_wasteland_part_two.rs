@@ -2,7 +2,11 @@ use std::{collections::HashMap, str::Lines};
 
 use num::integer::lcm;
 
-fn solve_for(node: &str, network: &HashMap<String, (String, String)>, instructions: &[char]) -> usize {
+fn solve_for(
+    node: &str,
+    network: &HashMap<String, (String, String)>,
+    instructions: &[char],
+) -> usize {
     let mut instruction_iter = instructions.iter().cycle().enumerate();
 
     let mut current = node;
@@ -11,7 +15,6 @@ fn solve_for(node: &str, network: &HashMap<String, (String, String)>, instructio
             'L' => &network.get(current).unwrap().0,
             _ => &network.get(current).unwrap().1,
         };
-        
     }
 
     instruction_iter.next().unwrap().0
@@ -53,7 +56,7 @@ fn solve(input: &mut Lines<'_>) -> usize {
         .filter(|node| node.clone().split_off(2) == "A")
         .map(|node| solve_for(&node, &network, &instructions))
         .fold(1, lcm);
-    
+
     count
 }
 
