@@ -1,10 +1,12 @@
 [workspace]
 
 members = [
+    "rustutils",
     "Day-1 Trebuchet/rust",
     "Day-4 Scratchcards",
     "Day-6 Wait For It",
     "Day-8 Haunted Wasteland",
     "Day-10 Pipe Maze",
-    "Day-12 Hot Springs"
+    "Day-12 Hot Springs",
+    "Day-14 Parabolic Reflector Dish"
 ]

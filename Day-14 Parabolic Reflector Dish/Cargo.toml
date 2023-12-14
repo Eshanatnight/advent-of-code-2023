@@ -1,0 +1,15 @@
+[package]
+name = "parabolic_reflector_dish"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "parabolic_reflector_dish_part_one"
+
+
+[[bin]]
+name = "parabolic_reflector_dish_part_two"
+
+[dependencies]
