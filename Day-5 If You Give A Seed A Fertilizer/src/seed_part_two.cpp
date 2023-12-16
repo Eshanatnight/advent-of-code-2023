@@ -148,9 +148,9 @@ int main(int argc, char* argv[]) {
 	std::string file_name;
 
 	if (*argv[1] == '1') {
-		file_name = "./part_two.sample.txt";
+		file_name = "./sample.txt";
 	} else {
-		file_name = "./part_two.input.txt";
+		file_name = "./input.txt";
 	}
 
 	std::ifstream file(file_name);

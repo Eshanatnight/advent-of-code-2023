@@ -103,9 +103,9 @@ auto main(int argc, char* argv[]) -> int {
 	string file_name;
 
 	if (*argv[1] == '1') {
-		file_name = "./part_one.sample.txt";
+		file_name = "./sample.txt";
 	} else {
-		file_name = "./part_one.input.txt";
+		file_name = "./input.txt";
 	}
 
 	cout << "Result: " << solve(file_name) << endl;
