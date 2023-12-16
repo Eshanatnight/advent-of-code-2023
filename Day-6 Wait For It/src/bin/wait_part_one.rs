@@ -59,8 +59,8 @@ fn parse_numbers(input: &str) -> Vec<usize> {
 }
 
 fn main() {
-    // let input = include_str!("../../part_one.sample.txt");
-    let input = include_str!("../../part_one.input.txt");
+    // let input = include_str!("../../sample.txt");
+    let input = include_str!("../../input.txt");
 
     let game = Game::parse(input);
 
