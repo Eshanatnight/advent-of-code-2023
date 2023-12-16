@@ -108,9 +108,9 @@ auto main(int argc, char* argv[]) -> int {
 
 	string file_name;
 	if (*argv[1] == '1') {
-		file_name = "two.sample.txt";
+		file_name = "sample.txt";
 	} else {
-		file_name = "two.input.txt";
+		file_name = "input.txt";
 	}
 
 	auto input = process_input(file_name);
