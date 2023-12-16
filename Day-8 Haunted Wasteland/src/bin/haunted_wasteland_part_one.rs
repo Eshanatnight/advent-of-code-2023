@@ -54,7 +54,7 @@ fn solve(input: &mut Lines<'_>) -> usize {
 
 fn main() {
     let input = include_str!("../../part_one.sample.txt").to_string();
-    let input = include_str!("../../part_one.input.txt").to_string();
+    let input = include_str!("../../input.txt").to_string();
     let mut input = input.lines();
 
     println!("Solution: {:?}", solve(&mut input));
