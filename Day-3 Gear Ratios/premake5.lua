@@ -10,7 +10,7 @@ project "part_one"
     cppdialect "C++17"
     targetdir ("build/bin/" .. outputdir .. "/%{prj.name}")
     objdir ("build/bin-int/" .. outputdir .. "/%{prj.name}")
-    files { "src/gear_ratios_part_one.cpp", "part_one.input.txt", "part_one.sample.txt" }
+    files { "src/gear_ratios_part_one.cpp", "input.txt", "sample.txt" }
 
 
 project "part_two"

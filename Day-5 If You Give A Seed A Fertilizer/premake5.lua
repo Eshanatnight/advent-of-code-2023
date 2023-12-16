@@ -10,7 +10,7 @@ project "part_one"
     cppdialect "C++17"
     targetdir ("build/bin/" .. outputdir .. "/%{prj.name}")
     objdir ("build/bin-int/" .. outputdir .. "/%{prj.name}")
-    files { "src/seed_part_one.cpp.cpp", "part_one.input.txt", "part_one.sample.txt"}
+    files { "src/seed_part_one.cpp.cpp", "input.txt", "sample.txt"}
 
 
 project "part_two"
@@ -19,4 +19,4 @@ project "part_two"
     cppdialect "C++17"
     targetdir ("build/bin/" .. outputdir .. "/%{prj.name}")
     objdir ("build/bin-int/" .. outputdir .. "/%{prj.name}")
-    files { "src/seed_part_two.cpp.cpp", "part_two.input.txt", "part_two.sample.txt"}
+    files { "src/seed_part_two.cpp.cpp", "input.txt", "sample.txt"}
