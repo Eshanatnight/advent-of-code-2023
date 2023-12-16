@@ -26,9 +26,9 @@ int main(int argc, char* argv[]) {
 	}
 
 	if (*argv[1] == '1') {
-		file_name = "./part_two.sample.txt";
+		file_name = "./sample.txt";
 	} else {
-		file_name = "./part_two.input.txt";
+		file_name = "./input.txt";
 	}
 
 	string line;
