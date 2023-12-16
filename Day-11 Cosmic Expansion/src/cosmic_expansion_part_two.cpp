@@ -24,9 +24,9 @@ int main(int argc, char* argv[]) {
 
 	std::string file_name;
 	if (*argv[1] == '1') {
-		file_name = "one.sample.txt";
+		file_name = "sample.txt";
 	} else {
-		file_name = "one.input.txt";
+		file_name = "input.txt";
 	}
 
 	std::string line;
