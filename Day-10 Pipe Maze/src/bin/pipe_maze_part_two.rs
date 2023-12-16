@@ -11,7 +11,7 @@ enum Direction {
 }
 
 fn main() -> std::io::Result<()> {
-    let input = include_str!("../../two.input.txt");
+    let input = include_str!("../../input.txt");
     let matrix: Vec<Vec<char>> = input.lines().map(|x| x.chars().collect()).collect();
 
     let start = get_start(&matrix).unwrap();
