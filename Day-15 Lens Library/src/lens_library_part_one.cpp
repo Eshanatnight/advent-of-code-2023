@@ -1,10 +1,10 @@
 #include <algorithm>
 #include <cstdint>
-#include <iostream>
-#include <vector>
 #include <fstream>
-#include <string>
+#include <iostream>
 #include <sstream>
+#include <string>
+#include <vector>
 
 [[nodiscard]] auto to_string_vec(std::ifstream& fin) -> std::vector<std::string> {
 	std::vector<std::string> vec;
@@ -26,47 +26,46 @@
 }
 
 [[nodiscard]] auto calculate_hash(const std::string& hash) -> uint64_t {
-    uint64_t result{0};
+	uint64_t result {0};
 
-    for(int i = 0; i < hash.size(); ++i) {
-        result += static_cast<uint64_t>(hash[i]);
-        result *= 17;
-        result %= 256;
-    }
+	for (int i = 0; i < hash.size(); ++i) {
+		result += static_cast<uint64_t>(hash[i]);
+		result *= 17;
+		result %= 256;
+	}
 
-    return result;
-
+	return result;
 }
 
 auto main(int argc, char* argv[]) -> int {
-    if(argc <= 1) {
-        std::cerr << "Invalid Useage\n";
-        return 1;
-    }
+	if (argc <= 1) {
+		std::cerr << "Invalid Useage\n";
+		return 1;
+	}
 
-    std::string file_name;
-    if(*argv[1] == '1') {
-        file_name = "sample.txt";
-    } else {
-        file_name = "input.txt";
-    }
-    
-    std::ifstream fin(file_name);
-    if(!fin) {
-        std::cerr << "Could not open file: " << file_name << std::endl;
-        return 1;
-    }
+	std::string file_name;
+	if (*argv[1] == '1') {
+		file_name = "sample.txt";
+	} else {
+		file_name = "input.txt";
+	}
 
-    auto vec = to_string_vec(fin);
-    std::vector<std::string> hashes = split(vec[0], ',');
-    
-    uint64_t val{0};
+	std::ifstream fin(file_name);
+	if (!fin) {
+		std::cerr << "Could not open file: " << file_name << std::endl;
+		return 1;
+	}
 
-    for (const auto& hash : hashes) {
-        val += calculate_hash(hash);
-    }
+	auto vec						= to_string_vec(fin);
+	std::vector<std::string> hashes = split(vec[0], ',');
 
-    std::cout << "Solution: " << val << '\n';
+	uint64_t val {0};
 
-    return 0;
+	for (const auto& hash : hashes) {
+		val += calculate_hash(hash);
+	}
+
+	std::cout << "Solution: " << val << '\n';
+
+	return 0;
 }
