@@ -10,5 +10,6 @@ members = [
     "Day-12 Hot Springs",
     "Day-14 Parabolic Reflector Dish",
     "Day-16 The Floor Will Be Lava",
-    "Day-18 Lavaduct Lagoon"
+    "Day-18 Lavaduct Lagoon",
+    "Day-20 Pulse Propagation"
 ]

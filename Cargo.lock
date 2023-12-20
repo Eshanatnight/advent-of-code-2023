@@ -156,6 +156,13 @@ name = "parabolic_reflector_dish"
 version = "0.1.0"
 
 [[package]]
+name = "pulse_propagation"
+version = "0.1.0"
+dependencies = [
+ "num",
+]
+
+[[package]]
 name = "regex"
 version = "1.10.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
