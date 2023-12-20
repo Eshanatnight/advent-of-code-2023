@@ -12,7 +12,7 @@ const fn pt_move(pt: (i64, i64), dir: u8, dist: u64) -> (i64, i64) {
         1 => (pt.0, pt.1.wrapping_add_unsigned(dist)),
         2 => (pt.0.wrapping_sub_unsigned(dist), pt.1),
         3 => (pt.0, pt.1.wrapping_sub_unsigned(dist)),
-        _ => unreachable!()
+        _ => unreachable!(),
     }
 }
 

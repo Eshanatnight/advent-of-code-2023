@@ -58,16 +58,16 @@ fn solve(input: &str) -> isize {
             match instruction.direction {
                 Direction::Up => {
                     curr_pos.y -= 1;
-                }
+                },
                 Direction::Down => {
                     curr_pos.y += 1;
-                }
+                },
                 Direction::Left => {
                     curr_pos.x -= 1;
-                }
+                },
                 Direction::Right => {
                     curr_pos.x += 1;
-                }
+                },
             }
             holes.push(curr_pos);
         }
@@ -78,7 +78,6 @@ fn solve(input: &str) -> isize {
 
     area + perimeter
 }
-
 
 fn main() {
     let input = include_str!("../../sample.txt");
