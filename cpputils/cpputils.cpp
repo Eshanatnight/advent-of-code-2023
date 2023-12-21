@@ -36,7 +36,7 @@
 	return vec;
 }
 
-[[nodiscard]] auto split(const std::string& str, char delimeter = ' ') -> std::vector<std::string> {
+[[nodiscard]] auto split(const std::string& str, char delimeter) -> std::vector<std::string> {
 	std::vector<std::string> vec;
 	std::stringstream ss(str);
 	std::string token;

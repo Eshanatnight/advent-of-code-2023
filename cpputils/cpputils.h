@@ -5,12 +5,19 @@
 #include <numeric>
 #include <string>
 #include <string_view>
+#include <unordered_set>
 #include <vector>
 
 auto read_file_to_string(const std::string& path) -> std::string;
 auto to_string_vec(std::string_view str) -> std::vector<std::string>;
 auto to_string_vec(std::ifstream fin) -> std::vector<std::string>;
 auto split(const std::string& str, char delimeter = ' ') -> std::vector<std::string>;
+
+template<typename T>
+[[nodiscard]] auto contains(const std::unordered_set<T>& set, const T& target) -> bool {
+	// https://stackoverflow.com/questions/17016175/why-is-stdunordered-setmissing-contains-method
+	return set.find(target) != set.end();
+}
 
 struct Point2D {
 	int64_t x;
