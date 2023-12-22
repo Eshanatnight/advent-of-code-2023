@@ -11,5 +11,6 @@ members = [
     "Day-14 Parabolic Reflector Dish",
     "Day-16 The Floor Will Be Lava",
     "Day-18 Lavaduct Lagoon",
-    "Day-20 Pulse Propagation"
+    "Day-20 Pulse Propagation",
+    "Day-22 Sand Slabs"
 ]

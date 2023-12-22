@@ -196,5 +196,9 @@ name = "rustutils"
 version = "0.1.0"
 
 [[package]]
+name = "sand_slabs"
+version = "0.1.0"
+
+[[package]]
 name = "the_floor_will_be_lava"
 version = "0.1.0"
