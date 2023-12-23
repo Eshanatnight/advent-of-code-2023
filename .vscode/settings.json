@@ -76,6 +76,10 @@
         "__verbose_abort": "cpp",
         "ios": "cpp",
         "locale": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "codecvt": "cpp",
+        "deque": "cpp",
+        "fstream": "cpp",
+        "__tree": "cpp"
     }
 }

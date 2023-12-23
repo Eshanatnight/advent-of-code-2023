@@ -1,5 +1,7 @@
 #include "./cpputils.h"
 
+#include "cpputils.h"
+
 #include <cstdlib>
 #include <iostream>
 #include <sstream>
@@ -9,7 +11,7 @@
 
 	if (!file) {
 		std::cerr << "Could not open file: " << file_name << std::endl;
-		std::exit(1);
+		std::exit(FILE_NOT_FOUND);
 	}
 
 	std::stringstream buffer;
@@ -28,6 +30,11 @@
 }
 
 [[nodiscard]] auto to_string_vec(std::ifstream& fin) -> std::vector<std::string> {
+	if (!fin) {
+		std::cerr << "File not found\n";
+		std::exit(FILE_NOT_FOUND);
+	}
+
 	std::vector<std::string> vec;
 	std::string line;
 	while (std::getline(fin, line)) {
