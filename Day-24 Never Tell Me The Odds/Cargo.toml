@@ -1,0 +1,15 @@
+[package]
+name = "never_tell_me_the_odds"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "never_tell_me_the_odds_part_one"
+
+[[bin]]
+name = "never_tell_me_the_odds_part_two"
+
+[dependencies]
+itertools = "0.12.0"
