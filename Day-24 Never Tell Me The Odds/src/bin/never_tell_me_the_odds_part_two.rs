@@ -111,7 +111,7 @@ fn solve(input: &str) -> Option<isize> {
                                 if cord != candidate {
                                     continue 'vz;
                                 }
-                            }
+                            },
                             None => intersect = Some(candidate),
                         }
                     }
@@ -121,8 +121,8 @@ fn solve(input: &str) -> Option<isize> {
                         println!("found intersection {:?}", i);
                         throw_pos = Some(i);
                         break 'outer;
-                    }
-                    _ => {}
+                    },
+                    _ => {},
                 }
             }
         }
